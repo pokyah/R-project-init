@@ -10,6 +10,10 @@ fi
 
 mkdir -p $mydir/data-raw $mydir/data-output $mydir/fig $mydir/R $mydir/tests $mydir/report-outputs $mydir/settings
 
+cat > $mydir/LICENSE <<EOM
+GNU GPL V3
+EOM
+
 cat > $mydir/init.R << EOM
 ## New Script 
 EOM
