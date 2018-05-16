@@ -39,7 +39,7 @@ $ mkdir `~/.local/bin
 $ sudo ln -sf absolute/path/of/make-R-skeletton.sh ~/.local/bin/rskel
 ```
 
-Now, from anywhere, if you type `rskel`, the container will be executed
+Now, from anywhere, if you type `rskel`, the command will be executed
 
 ## Want to contribute ?
 
