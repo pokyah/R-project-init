@@ -3,6 +3,14 @@
 Productivity tool.
 This script is inspired from https://frdvnw.github.io/data-sciences/linux/2018/04/12/my-r-skeletton.html
 
+# Requirements
+
+You must have curl installed
+
+```bash
+$ sudo apt-get install curl
+```
+
 ## How it works ? 
 
 * It pulls the Github R .gitgnore template file and make it your .gitignore file
