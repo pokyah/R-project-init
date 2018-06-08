@@ -10,9 +10,11 @@ fi
 
 mkdir -p $mydir/data-raw $mydir/data-output $mydir/fig $mydir/R $mydir/tests $mydir/report-outputs $mydir/settings
 
-cat > $mydir/LICENSE <<EOM
-GNU GPL V3
-EOM
+git init
+
+curl https://raw.githubusercontent.com/github/gitignore/master/R.gitignore > .gitignore
+
+curl https://www.gnu.org/licenses/gpl-3.0.txt > LICENSE
 
 cat > $mydir/init.R << EOM
 #'---

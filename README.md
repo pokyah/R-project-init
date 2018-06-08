@@ -3,6 +3,14 @@
 Productivity tool.
 This script is inspired from https://frdvnw.github.io/data-sciences/linux/2018/04/12/my-r-skeletton.html
 
+## How it works
+
+* It pulls the Github R .gitgnore template file and make it your .gitignore file
+* It pulls the GNU GPL V3 license from gnu.org and make it your LICENSE file
+* it pulls a default init.R script from this repo with knitr commenting + YAML header + TOS footer + my habitual R script initialisation functions (load common libraries, etc...)
+* It creates the tree structure
+* It intialize a new git repository
+
 ## How to use it ? 
 
 ### Fork or clone this repository
@@ -36,7 +44,8 @@ $ mkdir `~/.local/bin
 * make the simlink to the `make-R-skeletton.sh` in your `~/.local/bin/` folder that allow to launch it using the simple command `rskel` :
 
 ```bash
-$ sudo ln -sf absolute/path/of/make-R-skeletton.sh ~/.local/bin/rskel
+$ cd ~/.local/bin/
+$ sudo ln -sf <ABSOLUTE_PATH_TO>/make-R-skeletton.sh ~/.local/bin/rskel
 ```
 
 Now, from anywhere, if you type `rskel`, the command will be executed
