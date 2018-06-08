@@ -3,7 +3,7 @@
 Productivity tool.
 This script is inspired from https://frdvnw.github.io/data-sciences/linux/2018/04/12/my-r-skeletton.html
 
-## How it works
+## How it works ? 
 
 * It pulls the Github R .gitgnore template file and make it your .gitignore file
 * It pulls the GNU GPL V3 license from gnu.org and make it your LICENSE file
@@ -48,7 +48,11 @@ $ cd ~/.local/bin/
 $ sudo ln -sf <ABSOLUTE_PATH_TO>/make-R-skeletton.sh ~/.local/bin/rskel
 ```
 
-Now, from anywhere, if you type `rskel`, the command will be executed
+Now, from anywhere, if you type `rskel`, the command will be executed. You can also pass a `<PATH>` argument so that the tree structure will be created in this `<PATH>`
+
+## Coming improvments
+
+Automagically create a .Rproj configuration
 
 ## Want to contribute ?
 

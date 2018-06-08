@@ -10,114 +10,19 @@ fi
 
 mkdir -p $mydir/data-raw $mydir/data-output $mydir/fig $mydir/R $mydir/tests $mydir/report-outputs $mydir/settings
 
-git init
 
 curl https://raw.githubusercontent.com/github/gitignore/master/R.gitignore > .gitignore
 
 curl https://www.gnu.org/licenses/gpl-3.0.txt > LICENSE
 
-cat > $mydir/init.R << EOM
-#'---
-#'author: "Thomas Goossens (CRA-W) - t.goossens@cra.wallonie.be"
-#'output: 
-#'  html_document:
-#'    theme: default
-#'    toc: false
-#'    toc_depth: 6
-#'    toc_float:
-#'      collapsed: false
-#'      smooth_scroll: true
-#'  revealjs::revealjs_presentation:
-#'    theme: white
-#'    highlight: pygments
-#'    center: true
-#'    incremental: true
-#'    transition: fade
-#'    self_contained: false
-#'    reveal_plugins: ["notes", "search"]
-#'  md_document:
-#'    variant: markdown_github
-#'    toc: false
-#'    toc_depth: 6
-#'  pdf_document: default  
-#'title: "<INSERT YOUR TITLE HERE"
-#'date: "`r format(Sys.time(), '%d %B, %Y')`"
-#'---
+curl https://raw.githubusercontent.com/pokyah/R-project-init/master/template.init.R > init.R
 
-#+ ---------------------------------
-#' ## Script preparation
-#' 
-#+ preparation, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE, results='asis'
+git init
 
-# Avoid interference with old variables by cleaning the Global Environment
-rm(list=ls(all=TRUE))
+git add .
 
-# Automagically set the wd and the root of all projects 
-if (!require("here")) install.packages("here")
-library(here)
-wd.chr <- here::here()
+git commit -m "tree structure created"
 
-# loading the library to manage all the other libraries
-if (!require("pacman")) install.packages("pacman")
-library(pacman)
-requiredPackages <- read.csv("./settings/requiredPackages.csv", quote = "", sep = ",", header=TRUE, stringsAsFactors=FALSE)
-p_load(char=requiredPackages$packageName, character.only=TRUE )
-p_loaded()
-
-# Dynamic Sourcing of all the required functions
-source(paste0("../../pokyah/R-utilities/R-utilities.R"))
-source_files_recursively.fun("./R")
-source_files_recursively.fun("../agrometeor_utilities_public/R/")
-
-#+ ---------------------------------
-#' ## Terms of service 
-#' To use the [AGROMET API](https://app.pameseb.be/fr/pages/api_call_test/) you need to provide your own user token.  
-#' The present script is available under the [GNU-GPL V3](https://www.gnu.org/licenses/gpl-3.0.en.html) license and comes with ABSOLUTELY NO WARRANTY.
-#' 
-#' Copyright : Thomas Goossens - t.goossens@cra.wallonie.be 2018.  
-#' 
-#' *(This document was generated using [R software](https://www.r-project.org/) with the [knitr library](https://deanattali.com/2015/03/24/knitrs-best-hidden-gem-spin/))*.  
-#+ TOS,echo=TRUE,warning=FALSE,message=FALSE,error=FALSE	
-
-EOM
-
-cat> $mydir/.gitignore << EOM
-# History files
-.Rhistory
-.Rapp.history
-
-# Session Data files
-.RData
-
-# Example code in package build process
-*-Ex.R
-
-# Output files from R CMD build
-/*.tar.gz
-
-# Output files from R CMD check
-/*.Rcheck/
-
-# RStudio files
-.Rproj.user/
-
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
-
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
-.httr-oauth
-
-# knitr and R markdown default cache directories
-/*_cache/
-/cache/
-
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
-
-# Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
-rsconnect/
 
 EOM
 
