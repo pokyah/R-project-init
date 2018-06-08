@@ -17,14 +17,17 @@ curl https://www.gnu.org/licenses/gpl-3.0.txt > LICENSE
 
 curl https://raw.githubusercontent.com/pokyah/R-project-init/master/template.init.R > init.R
 
+
+
+cat file2 >> file1
+
+
 git init
 
 git add .
 
 git commit -m "tree structure created"
 
-
-EOM
 
 cat> $mydir/settings/requiredPackages.csv << EOM
 packageName, version, purpose

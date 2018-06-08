@@ -1,0 +1,13 @@
+# RStudio files
+.Rproj/
+
+# Geo files
+*.grd
+*.gri
+*.vrt
+*.rds
+
+# ignore folder geodata
+/data-raw/geodata
+
+

@@ -42,7 +42,7 @@ wd.chr <- here::here()
 if (!require("pacman")) install.packages("pacman")
 library(pacman)
 requiredPackages <- read.csv("./settings/requiredPackages.csv", quote = "", sep = ",", header=TRUE, stringsAsFactors=FALSE)
-p_load(char=requiredPackages, character.only=TRUE )
+p_load(char=requiredPackages$packageName, character.only=TRUE )
 p_loaded()
 
 # Dynamic Sourcing of all the required functions
