@@ -14,7 +14,7 @@ curl https://raw.githubusercontent.com/github/gitignore/master/R.gitignore > .gi
 
 curl https://www.gnu.org/licenses/gpl-3.0.txt > LICENSE
 
-curl https://raw.githubusercontent.com/pokyah/R-project-init/master/template.listPckgs.csv >> /settings/listPckgs.csv
+curl https://raw.githubusercontent.com/pokyah/R-project-init/master/template.listPckgs.csv >> $mydir/settings/listPckgs.csv
 
 curl https://raw.githubusercontent.com/pokyah/R-project-init/master/template.init.R > init.R
 
