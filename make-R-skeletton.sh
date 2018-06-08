@@ -10,17 +10,17 @@ fi
 
 mkdir -p $mydir/data-raw $mydir/data-output $mydir/fig $mydir/R $mydir/tests $mydir/report-outputs $mydir/settings
 
-
 curl https://raw.githubusercontent.com/github/gitignore/master/R.gitignore > .gitignore
 
 curl https://www.gnu.org/licenses/gpl-3.0.txt > LICENSE
 
 curl https://raw.githubusercontent.com/pokyah/R-project-init/master/template.init.R > init.R
 
+curl https://raw.githubusercontent.com/pokyah/R-project-init/master/template.gitignore >> template.gitignore
 
+cat template.gitignore >> .gitignore
 
-cat file2 >> file1
-
+rm template.gitignore
 
 git init
 
